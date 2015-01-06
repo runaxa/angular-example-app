@@ -1,0 +1,48 @@
+<div class="main-view" ng-controller="StudentVController">
+	<div class="info">
+
+		<div>
+			<div id="hdr-box1" class="box"></div>
+			<div id="hdr-box2" class="box"></div>
+			<div id="hdr-box3" class="box"></div>
+			<div id="hdr-box4" class="box"></div>
+			<div id="hdr-box5" class="box"></div>
+		</div>
+		<div class="info-item col-md-1"><span>{{user.name}}</span></div>
+		<div class="info-item col-md-8">
+			<h1>{{exam.title}}<span>{{exam.type}}</span></h1>
+		</div>
+		<div class="position info-item col-md-1">第{{user.position+1}}名</div>
+		<div class="time info-item col-md-2">
+			<highchart style="width:150px;height:100px" id="time-chart" config="chartConfig"></highchart>
+		</div>
+		<progressbar class="progress-striped active" animate="true" max="100" value="progress" type="info"></progressbar>
+	</div>
+	<div class="chart-area test-area">
+		<div class="test-progress col-md-1">
+			<!-- <progressbar class="progress-striped active" animate="true" max="10" value="answeredQuestion" type="info"></progressbar> -->
+		</div>
+		<div class="test-content col-md-10">
+			<div class="question-title">
+				<h6>{{currentQuestionNum<0 ? "请准备答题..." : "第" +(currentQuestionNum+1) + "题"}}</h6>
+				{{currentQuestion.title}}
+			</div>
+			<div class="question-answer">
+				<ul class="btn-group" ng-show="isChoice">
+					<li class="btn btn-primary btn-choice" ng-model="$parent.currentAnswer" btn-radio="item.title" ng-repeat='item in currentQuestion.choices' uncheckable><span>{{item.title}}.</span>{{item.content}}</li>
+				</ul>
+				<ul ng-show="!isChoice">
+					<li ng-repeat='item in currentQuestion.correctAnswers'><textarea type='text' ng-model="$parent.currentAnswer" class="form-control"></textarea></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tips col-md-1"></div>
+	</div>
+	<div class="footer-student">
+		<div class="control-area">
+			<button class="btn button btn-multi" ng-disabled="firstQuestion" ng-click="showPrev()">上一题</button>
+			<button class="btn button btn-multi" ng-disabled="lastQuestion" ng-click="showNext()">下一题</button>
+			<button class="btn button btn-multi" ng-disabled="!answeredAll" ng-click="submitTest()">提交</button>
+		</div>
+	</div>
+</div>

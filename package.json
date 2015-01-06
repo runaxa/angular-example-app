@@ -1,0 +1,23 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "A demo for quiz using HTML5.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aruna1990/quiz.git"
+  },
+  "author": "Aruna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aruna1990/quiz/issues"
+  },
+  "homepage": "https://github.com/Aruna1990/quiz",
+  "dependencies": {
+    "express": "^4.10.6",
+    "socket.io": "^1.2.1"
+  }
+}

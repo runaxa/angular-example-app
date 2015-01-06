@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="test-app" ng-strict-di>
+<head>
+	<meta charset="UTF-8">
+	<title>课堂测试</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="./app/style/main.css">
+
+</head>
+<body>
+	<div class="content-wrap" ng-controller="ViewController">
+		<signin-view  ng-show="active.signin"></signin-view>
+		<teacher-view  ng-show="active.teacher"></teacher-view>
+		<student-view  ng-show="active.student"></student-view>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="./app/lib/jquery-1.11.1.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="./app/lib/bootstrap-3.3.1/dist/js/bootstrap.min.js"></script>
+	<script src="./app/lib/angular.js"></script>
+	<script src="./app/lib/ui-bootstrap-tpls-0.12.0.js"></script>
+	<!-- highchart.js -->
+    <script src="./app/lib/highstock.src.js"></script><script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="./app/lib/highcharts-ng.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
+
+	<!-- socket.io.js -->
+    <script src="./app/lib/socket.io.js"></script>
+	<script src="./app/ng-socket.js"></script>
+
+	<script src="./app/signin/signin.js"></script>
+	<script src="./app/app.js"></script>
+	<script src="./app/student/student.js"></script>
+	<script src="./app/teacher/teacher.js"></script>
+	<script src="./app/question/question.js"></script>
+</body>
+</html>

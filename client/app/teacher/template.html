@@ -1,0 +1,28 @@
+<div class="main-view" ng-controller="TeacherVController">
+	<div class="info">
+		<div>
+			<div id="hdr-box1" class="box"></div>
+			<div id="hdr-box2" class="box"></div>
+			<div id="hdr-box3" class="box"></div>
+			<div id="hdr-box4" class="box"></div>
+			<div id="hdr-box5" class="box"></div>
+		</div>
+		<div class="info-item col-md-1"><span>{{user.name}}</span></div>
+		<div class="info-item col-md-8">
+			<h1>{{exam.title}}<span>{{exam.type}}</span></h1>
+		</div>
+		<div class="class info-item col-md-1">{{exam.className}}</div>
+		<div class="time info-item col-md-2">考试时间：{{exam.time}}分钟</div>
+	</div>
+	<div class="chart-area">
+		<div class="">
+            <highchart id="result-chart" ng-show="testStart" config="chartConfig"></highchart>
+		</div>
+	</div>
+	<div class="footer-student">
+		<div class="control-area">
+			<button class="btn button" ng-disabled="testStart" ng-click="startTest()">开始测试</button><!-- ng-click="showChart()" -->
+			<button class="btn button" ng-disabled="!testStart" ng-click="endTest()">公布结果</button>
+		</div>
+	</div>
+</div>
